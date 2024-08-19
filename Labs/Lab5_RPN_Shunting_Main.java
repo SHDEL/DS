@@ -6,14 +6,14 @@ import java.util.StringTokenizer;
 import solutions.pack5_Postfix.*;
 
 public class Lab5_RPN_Shunting_Main {
-    static void task1() {
-        MyStackL_660019 stack = new MyStackL_660019();
-        stack.push(1.0);
-        stack.push(2.2);
-        stack.push(4.4);
-        stack.push(3.3);
-        System.out.println(stack);
-    }
+    // static void task1() {
+    //     MyStackL_660019 stack = new MyStackL_660019();
+    //     stack.push(1.0);
+    //     stack.push(2.2);
+    //     stack.push(4.4);
+    //     stack.push(3.3);
+    //     System.out.println(stack);
+    // }
     private static void testTokenizer(String toBeRPN) {
         StringTokenizer st = new StringTokenizer(toBeRPN);
         int i = 0;

@@ -1,6 +1,6 @@
 package solutions.pack7_Recursion;
 import java.util.Arrays;
-public class EqualSubsets {
+public class EqualSubsets_660019 {
     public static boolean canPartition_Recur(int [] arr){
         int sum = 0;
         for (int num : arr) {

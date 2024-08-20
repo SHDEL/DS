@@ -1,6 +1,6 @@
 package solutions.pack7_Recursion;
 
-public class GridPaths {
+public class GridPaths_660019 {
     public static int numberOfPaths(int [][] grid){
         int m = grid.length - 1;
         int n = grid[0].length - 1;

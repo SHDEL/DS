@@ -1,7 +1,5 @@
 package solutions.pack9_Heap;
 
-import java.util.Arrays;
-
 public class MyHeapSort_660019{
     MyMinHeap_660019 heap = new MyMinHeap_660019();
     public MyHeapSort_660019(){

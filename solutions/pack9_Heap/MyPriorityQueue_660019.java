@@ -1,7 +1,4 @@
 package solutions.pack9_Heap;
-
-import java.util.Arrays;
-
 public class MyPriorityQueue_660019 implements MyQueueInterface {
     MyMinHeap_660019 heap = new MyMinHeap_660019();
     public void enqueue(int d){

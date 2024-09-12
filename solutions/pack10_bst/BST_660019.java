@@ -1,21 +1,21 @@
 package solutions.pack10_bst;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 
-public class BST {
-    TreeNode root;
-    public BST(){
+public class BST_660019 {
+    TreeNode_660019 root;
+    public BST_660019(){
         root = null;
     }
-    public TreeNode getRoot(){
+    public TreeNode_660019 getRoot(){
         return root;
     }
     public void insert(int d) {
         if(root == null) {
-            root = new TreeNode(d);
+            root = new TreeNode_660019(d);
             return;
         }
-        TreeNode current = root;
+        TreeNode_660019 current = root;
         while (current != null) {
             if (d < current.data) {
                 if (current.left != null){
@@ -23,7 +23,7 @@ public class BST {
                 } 
                 else {
                     /* your code 1*/
-                    current.left = new TreeNode(d);
+                    current.left = new TreeNode_660019(d);
                     current.left.parent = current;
                     return;
                 }
@@ -34,18 +34,18 @@ public class BST {
                     current = current.right;
                 }
                 else {
-                    current.right = new TreeNode(d);
+                    current.right = new TreeNode_660019(d);
                     current.right.parent = current;
                     return;
                 }
             }
         } //while
     }
-    public TreeNode search(int d){
+    public TreeNode_660019 search(int d){
         return searchRecurse(d, root);
 
     }
-    public TreeNode searchRecurse(int d, TreeNode node){
+    private TreeNode_660019 searchRecurse(int d, TreeNode_660019 node){
         if (node == null) return null;
         if (d == node.data) return node;
         if (d < node.data){
@@ -56,7 +56,7 @@ public class BST {
     public void delete(int d){
         delete(d, root);
     }
-    public void delete(int d, TreeNode node) {
+    private void delete(int d, TreeNode_660019 node) {
         if(node==null) return; //not found
         if(d < node.data){
             delete(d, node.left);
@@ -66,7 +66,7 @@ public class BST {
         }
         else { // found!! now, time to delete
             if((node.left==null)||(node.right==null)) { // 0 or 1 child
-                TreeNode q = (node.left==null)?node.right:node.left;
+                TreeNode_660019 q = (node.left==null)?node.right:node.left;
                 if(node.parent.left==node){ // this node is a left child
                     node.parent.left = q;
                 }
@@ -77,7 +77,7 @@ public class BST {
             } 
             else { // 2 children
                 // see next slide
-                TreeNode q = findMaxFrom(node.left);
+                TreeNode_660019 q = findMaxFrom(node.left);
                 delete(q.data, node.left);
                 if(node.parent.left==node){
                     node.parent.left = q;
@@ -90,8 +90,8 @@ public class BST {
             }
         } // else for delete
     }
-    private TreeNode findMaxFrom(TreeNode toBeDelete){
-        TreeNode cur = toBeDelete.left;
+    private TreeNode_660019 findMaxFrom(TreeNode_660019 toBeDelete){
+        TreeNode_660019 cur = toBeDelete.left;
         while (cur.right != null) {
             cur = cur.right;
             
@@ -103,7 +103,7 @@ public class BST {
         printInOrderRecurse(root);
         System.out.println();
     }
-    private void printInOrderRecurse(TreeNode node){
+    private void printInOrderRecurse(TreeNode_660019 node){
         if (node == null) return;
         printInOrderRecurse(node.left);
         System.out.print(node.data + " ");
@@ -113,7 +113,7 @@ public class BST {
         printPreOrderRecurse(root);
         System.out.println();
     }
-    public void printPreOrderRecurse(TreeNode node){
+    private void printPreOrderRecurse(TreeNode_660019 node){
         if (node == null) return;
         System.out.print(node.data + " ");
         printPreOrderRecurse(node.left);
@@ -123,21 +123,21 @@ public class BST {
         printPostOrderRecurse(root);
         System.out.println();
     }
-    public void printPostOrderRecurse(TreeNode node){
+    private void printPostOrderRecurse(TreeNode_660019 node){
         if (node == null) return;
         printPostOrderRecurse(node.left);
         printPostOrderRecurse(node.right);
         System.out.print(node.data + " ");
     }
-    public TreeNode findMax(){
-        TreeNode cur = root;
+    public TreeNode_660019 findMax(){
+        TreeNode_660019 cur = root;
         while (cur.right != null) {
             cur = cur.right;
         }
         return cur;
     }
-    public TreeNode findMin(){
-        TreeNode cur = root;
+    public TreeNode_660019 findMin(){
+        TreeNode_660019 cur = root;
         while (cur.left != null) {
             cur = cur.left;
         }
@@ -146,7 +146,7 @@ public class BST {
     public int height(){
         return heightRecurse(root);
     }
-    public int heightRecurse(TreeNode node){
+    private int heightRecurse(TreeNode_660019 node){
         if (node == null) return 0;
         int left = heightRecurse(node.left);
         int right = heightRecurse(node.right);
@@ -155,28 +155,40 @@ public class BST {
     public int count(){
         return countRecurse(root);
     }
-    public int countRecurse(TreeNode node){
+    private int countRecurse(TreeNode_660019 node){
         if (node == null) return 0;
         return 1+countRecurse(node.left)+countRecurse(node.right);
     }
     public Double findMedian(){
-        TreeNode node = root;
-        int length = count();
-        int [] arr = new int[length];
-        int idx = 0;
-        addArray(node, arr, idx);
-        System.out.println(Arrays.toString(arr));
+        TreeNode_660019 node = root;
+        ArrayList<Integer> arr = new ArrayList<>();
+        addArray(node, arr);
+        int length = arr.size();
+        System.out.println(arr);
         if (length % 2 != 0){
-            return (double) arr[length / 2];
+            return (double) arr.get(length / 2);
         }
         else{
-            return (double) ((arr[(length / 2) - 1] ) + (arr[length / 2])) / 2; 
+            return (double) ((arr.get((length / 2) - 1)) + (arr.get(length/ 2))) / 2; 
         }
     }
-    void addArray(TreeNode node, int[] arr, int idx){
+    void addArray(TreeNode_660019 node, ArrayList<Integer> arr){
         if (node == null) return;
-        addArray(node.left, arr, idx + 1);
-        arr[idx] = node.data;
-        addArray(node.right, arr, idx + 1);
+        addArray(node.left, arr);
+        arr.add(node.data);
+        addArray(node.right, arr);
+    }
+    public int findRank(int x){
+        ArrayList<Integer> arr = new ArrayList<>();
+        TreeNode_660019 node = root;
+        addArray(node, arr);
+        System.out.println(arr);
+        for (int i = 0; i < arr.size(); i++){
+            if (x == arr.get(i)){
+                return i + 1;
+            }
+        }
+        return -1;
+
     }
 }

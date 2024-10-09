@@ -1,9 +1,9 @@
 package solutions.pack10_bst;
 
-public class TreeNode {
+public class TreeNode_660019 {
     int data;
-    TreeNode left, right, parent;
-    public TreeNode(int d){
+    TreeNode_660019 left, right, parent;
+    public TreeNode_660019(int d){
         data = d;
     }
     @Override

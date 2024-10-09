@@ -13,7 +13,7 @@ public class Lab10_BST_Main {
 		System.out.println("--- task 1 ---");
 		int data[] = { 15, 20, 10, 18, 16, 12, 8, 25, 19, 30 };
 		
-		BST bst = new BST();
+		BST_660019 bst = new BST_660019();
 		for (int i=0; i<data.length; i++)
 			bst.insert(data[i]);
 
@@ -33,7 +33,7 @@ public class Lab10_BST_Main {
 		int data[] = {60, 41, 65, 63, 70, 53,
 					  16, 46, 55, 62, 64, 42};
 		
-		BST bst = new BST();
+		BST_660019 bst = new BST_660019();
 		for (int i=0; i<data.length; i++){
 			bst.insert(data[i]);
 		}
@@ -50,15 +50,15 @@ public class Lab10_BST_Main {
 	}
 	public static void task3() {
 		System.out.println("--- task 3 ---");
-		median();
+		// median();
 		// closest();
-		// rank();
+		rank();
 	}
 	public static void median() {
 		System.out.println("-- test find median --");
 		int data[] = { 20, 22, 8, 12, 4, 10, 14 };
 		
-		BST bst = new BST();
+		BST_660019 bst = new BST_660019();
 		for (int i=0; i<data.length; i++){
 			bst.insert(data[i]);
 		}
@@ -85,7 +85,7 @@ public class Lab10_BST_Main {
 		System.out.println("-- test find rank --");
 		int data[] = { 15, 20, 10, 18, 16, 12, 8, 25, 19, 30 };
 		
-		BST bst = new BST();
+		BST_660019 bst = new BST_660019();
 		for (int i=0; i<data.length; i++)
 			bst.insert(data[i]);
 		System.out.println(bst.findRank(12)); // 3

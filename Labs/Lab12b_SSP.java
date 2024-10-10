@@ -7,10 +7,10 @@ public class Lab12b_SSP {
 
     public static void main(String[] args) {
         System.out.println("Task 1:");
-        task1();
+        // task1();
 
         System.out.println("\nTask 2:");
-        task2();
+        // task2();
 
         System.out.println("\nTask 3:");
         task3();
@@ -83,7 +83,7 @@ public class Lab12b_SSP {
     }
 
     public static void task3() {
-        Task3 task3 = new Task3();
+        Task3_660019 task3 = new Task3_660019();
 
         int[] initialState1 = { 6, 3, 2, 5, 4, 1 };
         int[] goalState1 = { 1, 2, 3, 4, 5, 6 };
